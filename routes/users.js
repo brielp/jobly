@@ -68,6 +68,7 @@ router.get("/", ensureLoggedIn, ensureAdmin, async function (req, res, next) {
  * Authorization required: login
  **/
 
+
 router.get("/:username", ensureLoggedIn, async function (req, res, next) {
   try {
     if (!res.locals.user.isAdmin && req.params.username !== res.locals.user.username) {
